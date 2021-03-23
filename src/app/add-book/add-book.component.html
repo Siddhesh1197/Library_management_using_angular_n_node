@@ -1,0 +1,40 @@
+<div class="container-fluid" style="max-width: 100%;">
+    <div class="alert alert-success" role="alert" *ngIf="status==1">
+        Book count updated successfully
+    </div>
+    <div class="row">
+        <!-- <div class="col-md-12 backgroundImage"></div> -->
+        <div class="col-md-5"></div>
+        <div class="col-md-5">
+            <div class="card" style="width: 38rem; margin-top: 20%;">
+                <div class="card-body">
+                    <div class="col-md-9">
+                        <form novalidate (ngSubmit)="submit(f.value)" #f="ngForm">
+                            <div class="form-group">
+                                <label>Book Name:</label>
+                                <input type="text" [(ngModel)]="bookName" class="form-control" name="BookName" #BookName="ngModel" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Author Name:</label>
+                                <input type="text" [(ngModel)]="authorName" class="form-control" name="AuthorName" #AuthorName="ngModel" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Publication Name:</label>
+                                <input type="text" [(ngModel)]="publication" class="form-control" name="Publication" #Publication="ngModel" required>
+                            </div>
+                            <!-- {{publication}} -->
+                            <div class="form-group">
+                                <label>Price:</label>
+                                <input type="number" [(ngModel)]="price" class="form-control" name="Price" #Price="ngModel" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" name="submit" value="Submit" [disabled]="!f.valid">
+                                <input type="button" class="btn btn-secondary" name="reset" value="Reset" (click)="reset()">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
